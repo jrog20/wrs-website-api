@@ -2,7 +2,11 @@ class SessionsController < ApplicationController
   def create
     # Changing from email: params[:user][:email] to 
     # email: params[:email] stops the 500 error, but redirects to home
-    binding.pry
+  # binding.pry
+    # *** MAYBE THIS? ***:     
+    # @user = User.find_by_email(params[:email])
+    # if @user && @user.authenticate(params[:password])
+
     @user = User.find_by(email: params[:session][:email])
     # Changed from params[:user][:password]
     if @user && @user.authenticate(params[:session][:password])
