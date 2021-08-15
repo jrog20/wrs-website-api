@@ -15,17 +15,21 @@ class SessionsController < ApplicationController
         user: @user.user_serializer
       }
       render json: response, status: :ok
+      # render json: UserSerializer.new(@user), status: :ok
+      # render json: @user
+      # render json: user: @user.user_serializer
     else
-      response = {
-        error: "Invalid login",
-        details: @user.errors.full_messages
+      render json: {
+        error: "Invalid login"
+        # details: @user.errors.full_messages
       }
-      render json: response, status: :unauthorized
+      # render json: response, status: :unauthorized
     end
   end
 
   def get_current_user
     if logged_in?
+      # render json: UserSerializer.new(current_user)
       render json: {
           user: current_user.user_serializer
         }, status: :ok
