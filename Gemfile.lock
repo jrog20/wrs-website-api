@@ -100,6 +100,7 @@ GEM
     nokogiri (1.12.3)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
+    pg (1.2.3)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -154,7 +155,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thor (1.1.0)
     thread_safe (0.3.6)
     tzinfo (1.2.9)
@@ -174,13 +174,13 @@ DEPENDENCIES
   byebug
   image_processing (~> 1.2)
   listen (~> 3.2)
+  pg
   pry (~> 0.13.1)
   puma (~> 4.1)
   rack-cors
   rails (~> 6.0.4)
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3 (~> 1.4)
   tzinfo-data
 
 RUBY VERSION
