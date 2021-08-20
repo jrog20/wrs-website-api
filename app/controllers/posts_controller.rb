@@ -5,7 +5,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @Post = Post.create(post_params)
+    @post = Post.create(post_params)
+    binding.pry
   end
 
   def destroy
@@ -14,6 +15,6 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.permit(:title, :body, :date, images: [], tags: [], categories: [])
+      params.require(:post).permit(:title, :body, :date, categories: [], tags: [], images: [])
     end
 end
