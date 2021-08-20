@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 2021_08_16_211116) do
     t.string "title"
     t.string "date"
     t.text "body"
-    t.string "tags"
-    t.string "categories"
+    t.string "tags", default: [], array: true
+    t.string "categories", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
