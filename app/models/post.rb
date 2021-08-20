@@ -1,3 +1,3 @@
 class Post < ApplicationRecord
-  has_many_attached:image
+  has_many_attached :images
 end
