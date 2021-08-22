@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(post_params)
     # @post.images.attach(params[:images])
-    binding.pry
+    # binding.pry
   end
 
   def destroy
