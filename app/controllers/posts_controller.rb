@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
+    # @post.images.attach(params[:images])
     binding.pry
   end
 
@@ -15,6 +16,6 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :body, :date, categories: [], tags: [], images: [])
+      params.require(:post).permit(:title, :body, :date, categories: [], tags: [], images: [{}])
     end
 end
