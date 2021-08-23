@@ -4,7 +4,7 @@ class PostSerializer < ActiveModel::Serializer
   def images
     if object.images.attached?
       {
-        url: rails_blob_url(object.images)
+        url: rails_blob_url(object.images[0])
       }
     end
   end
