@@ -5,9 +5,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
-    # @post.images.attach(params[:images])
+    # Change from strong params to allow image
+    @post = Post.create(title: params[:title], body: params[:body], date: params[:date], tags: params[:tags], categories: params[:categories], images: params[:images])
     # binding.pry
+    # @post = Post.create(post_params)
+    # @post.images.attach(params[:images])
   end
 
   def destroy
