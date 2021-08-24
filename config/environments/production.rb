@@ -1,6 +1,14 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # some version of this will need to be added...look at development.rb
+    # Added for Active Storage 
+  # Allow generating absolute urls with routing url helpers.
+  # Rails.application.routes.default_url_options[:host] = 'localhost:3001'
+  # or? # For generating absolute urls with routing url helpers.
+  # config.routes.default_url_options[:host] = 'localhost:3001'
+  config.action_mailer.default_url_options = { :host => "localhost:3001" }
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
