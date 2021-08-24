@@ -7,9 +7,10 @@ class PostsController < ApplicationController
   def create
     # Change from strong params to allow image
     # binding.pry
-    @post = Post.create(title: params[:title], body: params[:body], date: params[:date], tags: params[:tags], categories: params[:categories], images: params[:images])
-    # @post = Post.new(post_params)
-    # @post.images.attach(params[:images])
+    # @post = Post.create(title: params[:title], body: params[:body], date: params[:date], tags: params[:tags], categories: params[:categories], images: params[:images])
+    @post = Post.new(post_params)
+    @post.images.attach(params[:images])
+    @post.save
   end
 
   def destroy
@@ -18,6 +19,6 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :body, :date, categories: [], tags: [], images: [{}])
+      params.permit(:title, :body, :date, :categories, :tags)
     end
 end
