@@ -6,9 +6,9 @@ class PostsController < ApplicationController
 
   def create
     # Change from strong params to allow image
-    # @post = Post.create(post_params)
     # binding.pry
     @post = Post.create(title: params[:title], body: params[:body], date: params[:date], tags: params[:tags], categories: params[:categories], images: params[:images])
+    # @post = Post.new(post_params)
     # @post.images.attach(params[:images])
   end
 
