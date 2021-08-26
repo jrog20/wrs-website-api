@@ -4,13 +4,23 @@ class PostsController < ApplicationController
     render json: @posts
   end
 
+  # How is this going to work for the image?
+  def show
+    render json: @post
+  end
+
   def create
-    # Change from strong params to allow image
-    # binding.pry
-    # @post = Post.create(title: params[:title], body: params[:body], date: params[:date], tags: params[:tags], categories: params[:categories], images: params[:images])
     @post = Post.new(post_params)
     @post.images.attach(params[:images])
     @post.save
+  end
+
+  def update
+    if @post.update(post_params)
+      render json: @post
+    else
+      render json: @post.errors, status: :unprocessable_entity
+    end
   end
 
   def destroy
