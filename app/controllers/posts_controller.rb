@@ -12,6 +12,8 @@ class PostsController < ApplicationController
   def create
     post = Post.new(post_params)
     post.images.attach(params[:images])
+    post.categories.push(params[:categories])
+    post.tags.push(params[:tags])
     post.save
   end
 
