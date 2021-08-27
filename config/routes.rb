@@ -5,9 +5,9 @@ Rails.application.routes.draw do
 
   post '/posts', to: 'posts#create'
   get '/posts', to: 'posts#index'
-  get '/post/:id', to: 'posts#show'
-  patch '/post/:id', to: 'posts#update'
-  delete '/post/:id', to: 'posts#destroy'
+  get '/posts/:id', to: 'posts#show'
+  patch '/posts/:id', to: 'posts#update'
+  delete '/posts/:id', to: 'posts#destroy'
 
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
