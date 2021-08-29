@@ -5,7 +5,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :date
       t.text :body
       t.string :tags, array: true, default: [].to_yaml
-      t.string :categories, array: true, default: [].to_yaml
+      t.string :categories, array: true, default: []
       t.timestamps
     end
   end
